@@ -1,0 +1,14 @@
+{
+  "#settingsPage": {
+    "title": "Settings"
+  },
+  "#langPicker": {
+    "items": ["Change language", "de", "en"]
+  },
+  "#menuPage2": {
+    "title": "Page2"
+  },
+  "#labelButton":{
+  	"text": "Native Widgets"
+  }
+}
