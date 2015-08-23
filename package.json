@@ -1,5 +1,5 @@
 {
-  "main": "src/menu.js",
+  "main": "src/login.js",
   "dependencies": {
     "tabris": "^1.1.0"
   }

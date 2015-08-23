@@ -1,14 +1,46 @@
 {
+  "#loginPage": {
+    "title": "Login"
+  },
+  "#loginLabel": {
+    "text": "Login"
+  },
+  "#loginField": {
+    "text": "Login",
+    "message": "Entrer votre login"
+  },
+  "#passwordLabel": {
+    "text": "Password"
+  },
+  "#passwordField": {
+    "text": "Password",
+    "message": "Entrer votre mot de passe"
+  },
+  "#loginButton": {
+    "text": "Login"
+  },
+
+  "#welcomePage": {
+    "title": "Bienvenue"
+  },
+
+  "#welcomeText": {
+    "text": "Bienvenue sur le site"
+  },
+  "#welcomeButton": {
+    "text": "GO"
+  },
+
   "#settingsPage": {
-    "title": "Settings"
+    "title": "Réglages"
   },
   "#langPicker": {
-    "items": ["Change language", "de", "en"]
+    "items": ["Changer langue", "fr", "en"]
   },
   "#menuPage2": {
     "title": "Page2"
   },
   "#labelButton":{
-  	"text": "Native Widgets"
+    "text": "Native Widgets"
   }
 }
