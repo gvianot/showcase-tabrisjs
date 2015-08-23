@@ -1,5 +1,5 @@
 {
-  "main": "myapp.js",
+  "main": "src/myapp.js",
   "dependencies": {
     "tabris": "^1.1.0"
   }
