@@ -7,8 +7,8 @@
   <author email="gvianot@yahoo.com">
     Gvianot
   </author>
-  <icon src="src/icon.png" />
   <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
   <gap:plugin name="com.phonegap.plugins.barcodescanner" />
   <gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
+  <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
 </widget>

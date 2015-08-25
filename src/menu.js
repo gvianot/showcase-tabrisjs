@@ -36,7 +36,7 @@ var imageView = tabris.create('ImageView', {
 
 function onSuccess(imageUrl) {
   imageView.set('image', {src: imageUrl});
-  cordova.plugins.notification.badge.increase();
+  cordova.plugins.notification.badge.set(1);
 }
 function onFail(message) {
   console.log('Camera failed because: ' + message);
@@ -50,6 +50,8 @@ button.on('select', function() {
       targetHeight: 1024,
       destinationType: window.Camera.DestinationType.FILE_URI
     });
+
+  navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 });
 
@@ -72,6 +74,31 @@ tabris.create('Button', {
       resultView.set('text', '<b>Error:</b> ' + error);
     });
   }
+
+
+// onSuccess Callback
+// This method accepts a Position object, which contains the
+// current GPS coordinates
+//
+var onSuccess = function(position) {
+    alert('Latitude: '          + position.coords.latitude          + '\n' +
+          'Longitude: '         + position.coords.longitude         + '\n' +
+          'Altitude: '          + position.coords.altitude          + '\n' +
+          'Accuracy: '          + position.coords.accuracy          + '\n' +
+          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          'Heading: '           + position.coords.heading           + '\n' +
+          'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '\n');
+};
+
+// onError Callback receives a PositionError object
+//
+function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
+}
+
+
 
 
 page2.apply(texts);
