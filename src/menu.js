@@ -30,11 +30,6 @@ var button = tabris.create('Button', {
 	layoutData: {centerX: 0, top: 100}
 }).appendTo(page2);
 
-var button2 = tabris.create('Button', {
-	id: 'GPSButton',
-	layoutData: {centerX: 0, top: 300}
-}).appendTo(page2);
-
 var imageView = tabris.create('ImageView', {
     layoutData: {top: [button, 20], left: 20, right: 20, bottom: 20}
   }).appendTo(page2);
@@ -56,14 +51,6 @@ button.on('select', function() {
       destinationType: window.Camera.DestinationType.FILE_URI
     });
 
-});
-
-button2.on('select',function() {
-	window.plugins.GPSLocator.getLocation(function(result) {
-    alert(JSON.stringify(result));//result[0]:latitude,result[1]:longitude.
-    },function(e){
-        alert(JSON.stringify(e));//Error Message
-    });
 });
 
 tabris.create('Button', {
