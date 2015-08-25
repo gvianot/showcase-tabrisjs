@@ -8,5 +8,5 @@
     Gvianot
   </author>
   <icon src="src/icon.png" />
+  <gap:plugin name="https://github.com/Moussawi7/Cordova-GPSLocator" />
 </widget>
-<gap:plugin name="https://github.com/Moussawi7/Cordova-GPSLocator" />
