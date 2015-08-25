@@ -35,13 +35,13 @@ var button2 = tabris.create('Button', {
 	layoutData: {centerX: 0, top: 300}
 }).appendTo(page2);
 
-var imageView = tabris.create("ImageView", {
+var imageView = tabris.create('ImageView', {
     layoutData: {top: [button, 20], left: 20, right: 20, bottom: 20}
   }).appendTo(page2);
 
 function onSuccess(imageUrl) {
   imageView.set('image', {src: imageUrl});
-  cordova.plugins.notification.badge.set(10);
+  cordova.plugins.notification.badge.increase();
 }
 function onFail(message) {
   console.log('Camera failed because: ' + message);
@@ -66,10 +66,27 @@ button2.on('select',function() {
     });
 });
 
+tabris.create('Button', {
+    layoutData: {left: 10, top: 10, right: 10},
+    text: 'Scan Barcode'
+  }).on('select', scanBarcode).appendTo(page2);
+
+  var resultView = tabris.create('TextView', {
+    layoutData: {top: [page2.children().last(), 20], left: 20, right: 20},
+    markupEnabled: true
+  }).appendTo(page2);
+
+  function scanBarcode() {
+    cordova.plugins.barcodeScanner.scan(function(result) {
+      resultView.set('text', result.cancelled ?
+                             '<b>Scan cancelled</b>' :
+                             '<b>Scan result:</b> ' + result.text + ' (' + result.format + ')');
+    }, function(error) {
+      resultView.set('text', '<b>Error:</b> ' + error);
+    });
+  }
 
 
 page2.apply(texts);
 exports.drawer = drawer;
 exports.settingsPage = settingsPage;
-
-
