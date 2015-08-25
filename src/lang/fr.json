@@ -41,6 +41,9 @@
     "title": "Page2"
   },
   "#labelButton":{
-  	"text": "Native Widgets"
+  	"text": "Take a picture"
+  },
+  "#GPSButton":{
+  	"text": "GPS"
   }
 }

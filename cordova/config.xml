@@ -2,9 +2,11 @@
 <widget id="com.wardrobe.app" version="1.0.0">
   <name>Wardrobe</name>
   <description>
-    My first app.
+    Exchange
   </description>
   <author email="gvianot@yahoo.com">
     Gvianot
   </author>
+  <icon src="src/icon.png" />
 </widget>
+<gap:plugin name="https://github.com/Moussawi7/Cordova-GPSLocator" />
