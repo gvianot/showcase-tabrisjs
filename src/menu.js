@@ -51,15 +51,21 @@ button.on('select', function() {
       destinationType: window.Camera.DestinationType.FILE_URI
     });
 
-  window.plugins.GPSLocator.getLocation(function(result){
-    alert(JSON.stringify(result));//result[0]:latitude,result[1]:longitude.
-    },function(e) {
-        alert(JSON.stringify(e));//Error Message
-    });
-
 
 });
 
+tabris.create('Button', {
+    layoutData: {left: 10, top: 60, right: 10},
+    text: 'GPS'
+  }).on('select', gpsCoord).appendTo(page2);
+
+function gpsCoord() {
+  window.plugins.GPSLocator.getLocation(function(result) {
+    window.plugins.toast.showShortTop(JSON.stringify(result));//result[0]:latitude,result[1]:longitude.
+    },function(e) {
+        window.plugins.toast.showShortTop(JSON.stringify(e));//Error Message
+    });
+}
 var page3 = tabris.create('Page', {
   id: 'menuPage3',
   background: 'white',
